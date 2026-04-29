@@ -15,11 +15,7 @@ const App = () => {
       const parsed = JSON.parse(stored);
       if (parsed.role === "admin") {
         setUser("admin");
-      } else if (
-        parsed.role === "employee" &&
-        parsed.id &&
-        authData.employees
-      ) {
+      } else if (parsed.role === "employee" && parsed.id && authData.employees) {
         const emp = authData.employees.find((e) => e.id === parsed.id);
         if (emp) {
           setUser("employee");
@@ -36,14 +32,14 @@ const App = () => {
       return true;
     } else if (authData?.employees) {
       const employee = authData.employees.find(
-        (e) => e.email === email && e.password === password,
+        (e) => e.email === email && e.password === password
       );
       if (employee) {
         setUser("employee");
         setLoggedInUserData(employee);
         localStorage.setItem(
           "loggedInUser",
-          JSON.stringify({ role: "employee", id: employee.id }),
+          JSON.stringify({ role: "employee", id: employee.id })
         );
         return true;
       }
@@ -66,9 +62,7 @@ const App = () => {
   if (!user) return <Login handleLogin={handleLogin} />;
   if (user === "admin") return <AdminDashboard onLogout={handleLogout} />;
   if (user === "employee" && freshEmployeeData)
-    return (
-      <EmployeeDashboard data={freshEmployeeData} onLogout={handleLogout} />
-    );
+    return <EmployeeDashboard data={freshEmployeeData} onLogout={handleLogout} />;
 
   return <Login handleLogin={handleLogin} />;
 };

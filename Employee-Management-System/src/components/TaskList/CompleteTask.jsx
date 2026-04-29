@@ -21,13 +21,7 @@ const CompleteTask = ({ task }) => {
       onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
       onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.85")}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span
           style={{
             background: "#00d26622",
@@ -42,9 +36,7 @@ const CompleteTask = ({ task }) => {
         >
           ✓ DONE
         </span>
-        <span style={{ fontSize: "0.75rem", color: "#7a7a8a" }}>
-          {task.date}
-        </span>
+        <span style={{ fontSize: "0.75rem", color: "#7a7a8a" }}>{task.date}</span>
       </div>
 
       <div>

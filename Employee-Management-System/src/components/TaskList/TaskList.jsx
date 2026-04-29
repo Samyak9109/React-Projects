@@ -20,9 +20,7 @@ const TaskList = ({ data }) => {
 
       // Recalculate counts
       const taskCount = {
-        newTask: updatedTasks.filter(
-          (t) => t.newTask && !t.active && !t.completed && !t.failed,
-        ).length,
+        newTask: updatedTasks.filter((t) => t.newTask && !t.active && !t.completed && !t.failed).length,
         active: updatedTasks.filter((t) => t.active).length,
         completed: updatedTasks.filter((t) => t.completed).length,
         failed: updatedTasks.filter((t) => t.failed).length,
@@ -50,9 +48,7 @@ const TaskList = ({ data }) => {
   const currentEmp = employees.find((e) => e.id === data.id) || data;
   const tasks = currentEmp.tasks || [];
 
-  const newTasks = tasks.filter(
-    (t) => t.newTask && !t.active && !t.completed && !t.failed,
-  );
+  const newTasks = tasks.filter((t) => t.newTask && !t.active && !t.completed && !t.failed);
   const activeTasks = tasks.filter((t) => t.active);
   const completedTasks = tasks.filter((t) => t.completed);
   const failedTasks = tasks.filter((t) => t.failed);
@@ -76,19 +72,8 @@ const TaskList = ({ data }) => {
         }}
       >
         <div style={{ fontSize: "2rem", marginBottom: "12px" }}>✦</div>
-        <div
-          style={{
-            fontWeight: 700,
-            fontSize: "1.1rem",
-            color: "#f0f0f0",
-            marginBottom: "6px",
-          }}
-        >
-          No tasks yet
-        </div>
-        <div style={{ fontSize: "0.85rem" }}>
-          Your assigned tasks will appear here
-        </div>
+        <div style={{ fontWeight: 700, fontSize: "1.1rem", color: "#f0f0f0", marginBottom: "6px" }}>No tasks yet</div>
+        <div style={{ fontSize: "0.85rem" }}>Your assigned tasks will appear here</div>
       </div>
     );
   }
@@ -112,12 +97,7 @@ const TaskList = ({ data }) => {
           <NewTask key={`new-${i}`} task={task} onAccept={handleAccept} />
         ))}
         {activeTasks.map((task, i) => (
-          <AcceptTask
-            key={`active-${i}`}
-            task={task}
-            onComplete={handleComplete}
-            onFail={handleFail}
-          />
+          <AcceptTask key={`active-${i}`} task={task} onComplete={handleComplete} onFail={handleFail} />
         ))}
         {completedTasks.map((task, i) => (
           <CompleteTask key={`done-${i}`} task={task} />

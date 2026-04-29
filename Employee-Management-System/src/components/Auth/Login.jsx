@@ -37,8 +37,7 @@ const Login = ({ handleLogin }) => {
           transform: "translateX(-50%)",
           width: "600px",
           height: "300px",
-          background:
-            "radial-gradient(ellipse, rgba(200,255,87,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(200,255,87,0.06) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -64,8 +63,7 @@ const Login = ({ handleLogin }) => {
             left: "20%",
             right: "20%",
             height: "1px",
-            background:
-              "linear-gradient(90deg, transparent, #c8ff57, transparent)",
+            background: "linear-gradient(90deg, transparent, #c8ff57, transparent)",
           }}
         />
 
@@ -128,20 +126,11 @@ const Login = ({ handleLogin }) => {
         >
           Welcome back
         </h1>
-        <p
-          style={{
-            color: "#7a7a8a",
-            fontSize: "0.88rem",
-            marginBottom: "36px",
-          }}
-        >
+        <p style={{ color: "#7a7a8a", fontSize: "0.88rem", marginBottom: "36px" }}>
           Sign in to your workspace
         </p>
 
-        <form
-          onSubmit={submitHandler}
-          style={{ display: "flex", flexDirection: "column", gap: "18px" }}
-        >
+        <form onSubmit={submitHandler} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <label
               style={{
@@ -226,12 +215,8 @@ const Login = ({ handleLogin }) => {
             />
           </div>
 
-          <div
-            style={{ marginTop: "4px", color: "#5a5a6a", fontSize: "0.8rem" }}
-          >
-            Admin: <span style={{ color: "#7a7a8a" }}>admin@example.com</span> ·
-            Employee: <span style={{ color: "#7a7a8a" }}>em@ex.com</span> · pw:
-            123
+          <div style={{ marginTop: "4px", color: "#5a5a6a", fontSize: "0.8rem" }}>
+            Admin: <span style={{ color: "#7a7a8a" }}>admin@example.com</span> · Employee: <span style={{ color: "#7a7a8a" }}>em@ex.com</span> · pw: 123
           </div>
 
           <button

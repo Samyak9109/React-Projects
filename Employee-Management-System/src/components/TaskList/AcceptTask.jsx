@@ -17,22 +17,10 @@ const AcceptTask = ({ task, onComplete, onFail }) => {
         transition: "border-color 0.2s, transform 0.2s",
         animation: "fadeUp 0.4s ease both",
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "#c8ff57";
-        e.currentTarget.style.transform = "translateY(-3px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "#c8ff5744";
-        e.currentTarget.style.transform = "translateY(0)";
-      }}
+      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#c8ff57"; e.currentTarget.style.transform = "translateY(-3px)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#c8ff5744"; e.currentTarget.style.transform = "translateY(0)"; }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span
           style={{
             background: "#c8ff5722",
@@ -48,9 +36,7 @@ const AcceptTask = ({ task, onComplete, onFail }) => {
         >
           ◎ ACTIVE
         </span>
-        <span style={{ fontSize: "0.75rem", color: "#7a7a8a" }}>
-          {task.date}
-        </span>
+        <span style={{ fontSize: "0.75rem", color: "#7a7a8a" }}>{task.date}</span>
       </div>
 
       <div>
@@ -100,12 +86,8 @@ const AcceptTask = ({ task, onComplete, onFail }) => {
             cursor: "pointer",
             transition: "all 0.18s",
           }}
-          onMouseEnter={(e) => {
-            e.target.style.background = "#00e872";
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = "#00d266";
-          }}
+          onMouseEnter={(e) => { e.target.style.background = "#00e872"; }}
+          onMouseLeave={(e) => { e.target.style.background = "#00d266"; }}
         >
           ✓ Done
         </button>
@@ -124,14 +106,8 @@ const AcceptTask = ({ task, onComplete, onFail }) => {
             cursor: "pointer",
             transition: "all 0.18s",
           }}
-          onMouseEnter={(e) => {
-            e.target.style.background = "#ff5757";
-            e.target.style.color = "#fff";
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = "transparent";
-            e.target.style.color = "#ff5757";
-          }}
+          onMouseEnter={(e) => { e.target.style.background = "#ff5757"; e.target.style.color = "#fff"; }}
+          onMouseLeave={(e) => { e.target.style.background = "transparent"; e.target.style.color = "#ff5757"; }}
         >
           ✕ Failed
         </button>

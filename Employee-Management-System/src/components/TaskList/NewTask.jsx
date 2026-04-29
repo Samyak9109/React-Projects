@@ -17,22 +17,10 @@ const NewTask = ({ task, onAccept }) => {
         transition: "border-color 0.2s, transform 0.2s",
         animation: "fadeUp 0.4s ease both",
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "#7b61ff";
-        e.currentTarget.style.transform = "translateY(-3px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "#7b61ff44";
-        e.currentTarget.style.transform = "translateY(0)";
-      }}
+      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#7b61ff"; e.currentTarget.style.transform = "translateY(-3px)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#7b61ff44"; e.currentTarget.style.transform = "translateY(0)"; }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span
           style={{
             background: "#7b61ff22",
@@ -48,9 +36,7 @@ const NewTask = ({ task, onAccept }) => {
         >
           ✦ NEW
         </span>
-        <span style={{ fontSize: "0.75rem", color: "#7a7a8a" }}>
-          {task.date}
-        </span>
+        <span style={{ fontSize: "0.75rem", color: "#7a7a8a" }}>{task.date}</span>
       </div>
 
       <div>
@@ -79,14 +65,7 @@ const NewTask = ({ task, onAccept }) => {
         >
           {task.title}
         </h3>
-        <p
-          style={{
-            fontSize: "0.82rem",
-            color: "#7a7a8a",
-            lineHeight: 1.6,
-            flexGrow: 1,
-          }}
-        >
+        <p style={{ fontSize: "0.82rem", color: "#7a7a8a", lineHeight: 1.6, flexGrow: 1 }}>
           {task.description}
         </p>
       </div>
@@ -107,12 +86,8 @@ const NewTask = ({ task, onAccept }) => {
           marginTop: "auto",
           letterSpacing: "0.3px",
         }}
-        onMouseEnter={(e) => {
-          e.target.style.background = "#9b81ff";
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.background = "#7b61ff";
-        }}
+        onMouseEnter={(e) => { e.target.style.background = "#9b81ff"; }}
+        onMouseLeave={(e) => { e.target.style.background = "#7b61ff"; }}
       >
         Accept Task →
       </button>
